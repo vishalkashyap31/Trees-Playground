@@ -28,7 +28,6 @@ public class GreaterSumTree extends BinarySearchTree {
         }
         totalSum = convertBST2GreaterSumTree(root.getLeft(), totalSum);
         root.setData(totalSum - root.getData());
-        totalSum = root.getData();
         totalSum = convertBST2GreaterSumTree(root.getRight(), totalSum);
         return totalSum;
     }
