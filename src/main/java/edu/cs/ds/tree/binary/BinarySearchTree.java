@@ -7,7 +7,7 @@ import java.io.IOException;
  */
 public class BinarySearchTree {
 
-    private Node root;
+    protected Node root;
     private int noOfNodes;
 
     /**
@@ -132,5 +132,4 @@ public class BinarySearchTree {
     public int size() {
         return noOfNodes;
     }
-
 }
