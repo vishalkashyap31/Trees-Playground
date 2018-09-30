@@ -19,8 +19,14 @@ public class BinaryTree {
      * 
      * @param newNode
      *            A new {@link Node} that has to be added into the Binary Tree
+     * @throws IOException
+     *             if the newNode is null
      */
-    public void addNode(final Node newNode) {
+    public void addNode(final Node newNode) throws IOException {
+        if (newNode == null) {
+            throw new IOException("New node cannot be null");
+        }
+
         if (root == null) {
             root = newNode;
             noOfNodes++;
@@ -110,7 +116,7 @@ public class BinaryTree {
      * @param data
      *            A int that needs to be deleted from the tree
      * @throws IOException
-     *             if the data is not present in three
+     *             if the data is not present in tree
      */
     public void delete(final int data) throws IOException {
 
@@ -145,8 +151,8 @@ public class BinaryTree {
         }
 
         removeNode(lastNode);
-
         deleteNode.setData(lastNode.getData());
+        noOfNodes--;
     }
 
     /**

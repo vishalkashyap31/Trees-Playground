@@ -23,7 +23,7 @@ public class BinaryTreeTest {
     final BinaryTree binaryTree = new BinaryTree();
 
     @Before
-    public void setUp() {
+    public void setUp() throws IOException {
         binaryTree.addNode(new Node(1));
         binaryTree.addNode(new Node(2));
         binaryTree.addNode(new Node(3));
@@ -36,6 +36,17 @@ public class BinaryTreeTest {
         binaryTree.addNode(new Node(10));
         binaryTree.addNode(new Node(11));
         binaryTree.addNode(new Node(12));
+    }
+
+    /**
+     * Test if exception is thrown when tried to insert null
+     *
+     * @throws IOException
+     *             when the new node is null
+     */
+    @Test(expected = IOException.class)
+    public void testAddNode_whenPassedNull() throws IOException {
+        binaryTree.addNode(null);
     }
 
     /**
@@ -61,7 +72,6 @@ public class BinaryTreeTest {
     @Test
     public void testSearchNode() throws IOException {
         assertNotNull(binaryTree.searchNode(6));
-
     }
 
     /**
@@ -71,7 +81,7 @@ public class BinaryTreeTest {
      *             thrown when the item to be deleted is not found
      */
     @Test(expected = IOException.class)
-    public void testSearchNode_negative() throws IOException {
+    public void testSearchNode_whenPassedInvalidData() throws IOException {
         binaryTree.searchNode(99);
     }
 
@@ -86,6 +96,18 @@ public class BinaryTreeTest {
         assertTrue(binaryTree.search(6));
         binaryTree.delete(6);
         assertFalse(binaryTree.search(6));
+        assertEquals(11, binaryTree.size());
+    }
+
+    /**
+     * When delete is called on a invalid data exception should be thrown
+     * 
+     * @throws IOException
+     *             thrown when the item to be deleted is not found
+     */
+    @Test(expected = IOException.class)
+    public void testDeleteNode_whenPassedInvalidData() throws IOException {
+        binaryTree.delete(99);
     }
 
     /**
