@@ -11,11 +11,11 @@ import java.util.Stack;
  */
 public class BinaryTree {
 
-    private Node root;
+    protected Node root;
     private int noOfNodes;
 
     /**
-     * Add a new node into the binary Tree
+     * Add a new node into the {@link BinaryTree}
      * 
      * @param newNode
      *            A new {@link Node} that has to be added into the Binary Tree
@@ -111,7 +111,7 @@ public class BinaryTree {
     }
 
     /**
-     * Delete data from the tree
+     * Delete data from the {@link BinaryTree}
      * 
      * @param data
      *            A int that needs to be deleted from the tree

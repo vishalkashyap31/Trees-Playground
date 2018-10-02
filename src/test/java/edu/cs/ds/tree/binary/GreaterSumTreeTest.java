@@ -1,7 +1,6 @@
 package edu.cs.ds.tree.binary;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 
@@ -43,10 +42,6 @@ public class GreaterSumTreeTest {
     @Test
     public void testConvertBST2GreaterSumTree() {
         greaterSumTree.convertBST2GreaterSumTree();
-        assertTrue(greaterSumTree.search(69));
-        assertTrue(greaterSumTree.search(0));
-        assertTrue(greaterSumTree.search(20));
-        assertTrue(greaterSumTree.search(47));
-        assertTrue(greaterSumTree.search(57));
+        assertEquals(greaterSumTree.getTotalSum(), 426);
     }
 }
