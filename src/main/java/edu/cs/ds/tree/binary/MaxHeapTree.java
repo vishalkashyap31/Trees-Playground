@@ -35,12 +35,23 @@ public class MaxHeapTree extends BinaryTree {
     }
 
     /**
+     * Update the Max value with the new value
+     * 
+     * @param newValue
+     *            new value with which the max node has to be updated
+     */
+    public void updateMax(final int newValue) {
+        root.setData(newValue);
+        heapify(root, null);
+    }
+
+    /**
      * Get the maximum node in the {@link MaxHeapTree}
      * 
-     * @return {@link Node} which represents maximum in the {@link MaxHeapTree}
+     * @return A int which represents maximum in the {@link MaxHeapTree}
      */
-    public Node getMax() {
-        return root;
+    public int getMax() {
+        return root.getData();
     }
 
     private void heapify(final Node root, final Node previous) {

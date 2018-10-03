@@ -42,7 +42,7 @@ public class MaxHeapTreeTest {
      */
     @Test
     public void testRootNodeIsMaximum() {
-        assertEquals(maxHeapTree.getMax().getData(), 87);
+        assertEquals(maxHeapTree.getMax(), 87);
     }
 
     /**
@@ -54,7 +54,7 @@ public class MaxHeapTreeTest {
     @Test
     public void testDeleteMax() throws IOException {
         maxHeapTree.delete(87);
-        assertEquals(maxHeapTree.getMax().getData(), 75);
+        assertEquals(maxHeapTree.getMax(), 75);
         assertEquals(7, maxHeapTree.size());
     }
 }
