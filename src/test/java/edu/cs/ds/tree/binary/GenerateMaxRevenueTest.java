@@ -41,6 +41,6 @@ public class GenerateMaxRevenueTest {
         generateMaxRevenue.addTickets(10);
         generateMaxRevenue.addTickets(11);
         generateMaxRevenue.addTickets(9);
-        assertEquals(generateMaxRevenue.sellTickets(5), 40);
+        assertEquals(generateMaxRevenue.sellTickets(5), 49);
     }
 }
